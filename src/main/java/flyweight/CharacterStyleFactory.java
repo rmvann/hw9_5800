@@ -12,4 +12,8 @@ public class CharacterStyleFactory {
         }
         return styles.get(key);
     }
+
+    public int numStyles() {
+        return styles.size();
+    }
 }
