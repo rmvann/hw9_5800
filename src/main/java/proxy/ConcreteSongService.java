@@ -1,10 +1,12 @@
 package proxy;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.ArrayList;
 
 public class ConcreteSongService implements SongService {
-    List<Song> songs = new ArrayList<>();
+    Map<Integer, Song> songs = new HashMap<>();
 
     @Override
     public Song searchById(Integer songID) {
@@ -23,11 +25,11 @@ public class ConcreteSongService implements SongService {
 
         List<Song> matches = new ArrayList<>();
 
-        for (Song song : songs) {
+        songs.forEach((key, song) -> {
             if (song.getTitle().equals(title)) {
                 matches.add(song);
             }
-        }
+        });
         return matches;
     }
 
@@ -39,11 +41,11 @@ public class ConcreteSongService implements SongService {
 
         List<Song> matches = new ArrayList<>();
 
-        for (Song song : songs) {
+        songs.forEach((key, song) -> {
             if (song.getAlbum().equals(album)) {
                 matches.add(song);
             }
-        }
+        });
         return matches;
     }
 }
