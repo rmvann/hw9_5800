@@ -2,7 +2,7 @@ package proxy;
 
 import java.util.List;
 
-public class Song implements SongService {
+public class Song {
     String title;
     String artist;
     String album;
@@ -15,18 +15,19 @@ public class Song implements SongService {
         this.duration = duration;
     }
 
-    @Override
-    public Song searchById(Integer songID) {
-        return null;
+    public String getTitle() {
+        return title;
     }
 
-    @Override
-    public List<Song> searchByTitle(String title) {
-        return List.of();
+    public String getArtist() {
+        return artist;
     }
 
-    @Override
-    public List<Song> searchByAlbum(String album) {
-        return List.of();
+    public String getAlbum() {
+        return album;
+    }
+
+    public int getDuration() {
+        return duration;
     }
 }
