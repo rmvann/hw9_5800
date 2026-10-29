@@ -9,9 +9,14 @@ public class ConcreteSongService implements SongService {
     Map<Integer, Song> songs = new HashMap<>();
 
     @Override
+    public void addSong(int id, Song song) {
+        songs.put(id, song);
+    }
+
+    @Override
     public Song searchById(Integer songID) {
         try{
-            Thread.sleep(1000);
+            Thread.sleep(5000);
         } catch (Exception _) {}
 
         return songs.get(songID);
@@ -20,7 +25,7 @@ public class ConcreteSongService implements SongService {
     @Override
     public List<Song> searchByTitle(String title) {
         try{
-            Thread.sleep(1000);
+            Thread.sleep(5000);
         } catch (Exception _) {}
 
         List<Song> matches = new ArrayList<>();
@@ -36,7 +41,7 @@ public class ConcreteSongService implements SongService {
     @Override
     public List<Song> searchByAlbum(String album) {
         try{
-            Thread.sleep(1000);
+            Thread.sleep(5000);
         } catch (Exception _) {}
 
         List<Song> matches = new ArrayList<>();

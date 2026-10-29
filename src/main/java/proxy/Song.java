@@ -30,4 +30,9 @@ public class Song {
     public int getDuration() {
         return duration;
     }
+
+    @Override
+    public String toString() {
+        return title + " - " + artist + " - " + album + " - " + duration;
+    }
 }

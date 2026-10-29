@@ -11,6 +11,11 @@ public class SongCache implements SongService {
     ConcreteSongService concreteSongService = new ConcreteSongService();
 
     @Override
+    public void addSong(int id, Song song){
+        concreteSongService.addSong(id, song);
+    }
+
+    @Override
     public Song searchById(Integer songID) {
         if (idCache.containsKey(songID)) {
             return idCache.get(songID);
